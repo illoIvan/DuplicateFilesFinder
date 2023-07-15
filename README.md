@@ -5,6 +5,11 @@ This app helps you find duplicate files based on content, weight, name and metad
 
 ## Requirements
 * Java 17
+
+## 🏭 Releases
+Check [here](https://github.com/illoIvan/DuplicateFilesFinder/releases) latest releases to download
+
+## Requirements to modify the project
 * Eclipse IDE for Enterprise Java and Web Developers
 * Lombok
 * SceneBuilder
