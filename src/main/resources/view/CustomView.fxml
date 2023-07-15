@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.illoivan.duplicatefiles.model.CustomTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:controller="com.illoivan.duplicatefiles.controller.view.CustomViewController" 
+	prefHeight="793.0" prefWidth="1214.0" stylesheets="@../css/duplicateFileView.css" 
+	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+   <children>
+      <CustomTableView fx:id="tableView" prefHeight="793.0" prefWidth="1214.0"/>
+   </children>
+</AnchorPane>

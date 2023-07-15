@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPaneMain" prefHeight="551.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.illoivan.duplicatefiles.controller.view.MainViewController">
+   <children>
+      <TitledPane animated="false" collapsible="false" layoutX="253.0" layoutY="86.0" prefHeight="143.0" prefWidth="108.0" text="Match by ">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="93.0" prefWidth="237.0">
+               <children>
+                  <CheckBox fx:id="chkMatchName" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" text="FileName" />
+                  <CheckBox fx:id="chkMatchSize" layoutX="14.0" layoutY="44.0" mnemonicParsing="false" text="Size" />
+                  <CheckBox fx:id="chkMatchChecksum" layoutX="14.0" layoutY="78.0" mnemonicParsing="false" text="Checksum" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" collapsible="false" layoutX="11.0" layoutY="86.0" prefHeight="143.0" prefWidth="239.0" text="  Ignore Files">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="101.0" prefWidth="661.0">
+               <children>
+                  <CheckBox fx:id="chkIgnoreZeroBytes" layoutX="117.0" layoutY="10.0" mnemonicParsing="false" text="Zero bytes" />
+                  <CheckBox fx:id="chkIgnoreSystemFiles" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" text="System files" />
+                  <CheckBox fx:id="chkIgnoreSizeOver" layoutX="14.0" layoutY="80.0" mnemonicParsing="false" text="Size Over" />
+                  <CheckBox fx:id="chkIgnoreSizeUnder" layoutX="14.0" layoutY="46.0" mnemonicParsing="false" text="Size Under" />
+                  <Spinner fx:id="spinnerSizeOver" disable="true" editable="true" layoutX="111.0" layoutY="75.0" prefHeight="25.0" prefWidth="88.0" />
+                  <Spinner fx:id="spinnerSizeUnder" disable="true" editable="true" layoutX="111.0" layoutY="41.0" prefHeight="25.0" prefWidth="88.0" />
+                  <Label layoutX="205.0" layoutY="74.0" text="MB">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="205.0" layoutY="40.0" text="MB">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TabPane layoutX="11.0" layoutY="296.0" prefHeight="244.0" prefWidth="484.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tabExcludePath" text="Exclude path">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+	              <children>
+		                 <ListView fx:id="lstViewExcludePath" prefHeight="215.0" prefWidth="484.0" />
+	              </children>
+              </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="btnAddToViewExcludePath" layoutX="14.0" layoutY="260.0" mnemonicParsing="false" onAction="#addPath" prefHeight="25.0" prefWidth="73.0" text="Add" />
+      <Button layoutX="97.0" layoutY="260.0" mnemonicParsing="false" onAction="#removePath" prefHeight="25.0" prefWidth="73.0" text="Remove" />
+      <Button fx:id="btnSearch" layoutX="334.0" layoutY="241.0" mnemonicParsing="false" onAction="#btnSearch" prefHeight="39.0" prefWidth="161.0" text="Search duplicates files" textFill="#5350ff" />
+      <Accordion layoutX="499.0" layoutY="296.0" prefHeight="174.0" prefWidth="270.0">
+        <panes>
+          <TitledPane animated="false" prefHeight="167.0" prefWidth="270.0" text="MP3 METADATA">
+               <content>
+                  <VBox prefHeight="149.0" prefWidth="269.0" spacing="10.0">
+                     <children>
+                        <VBox fx:id="vBoxMp3Metadata" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <CheckBox fx:id="chkGenre" mnemonicParsing="false" text="Genre">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="chkAlbum" mnemonicParsing="false" text="Album">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="chkArtist" mnemonicParsing="false" text="Artist">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="chkTitle" mnemonicParsing="false" text="Title">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="chkDuration" mnemonicParsing="false" text="Duration">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </CheckBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+        </panes>
+      </Accordion>
+      <TextField fx:id="txtMainFolder" editable="false" layoutX="134.0" layoutY="30.0" prefHeight="31.0" prefWidth="484.0" />
+      <Button fx:id="btnAddMainFolder" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="116.0" text="AddMainFolder" />
+      <Button fx:id="btnViewChecksum" layoutX="634.0" layoutY="30.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="See checksum files" />
+      <TitledPane animated="false" collapsible="false" layoutX="365.0" layoutY="86.0" prefHeight="143.0" prefWidth="108.0" text="Checksum Algorithm">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="93.0" prefWidth="237.0">
+               <children>
+                  <VBox prefHeight="118.0" prefWidth="130.0" spacing="17.0">
+                      <fx:define>
+					  	<ToggleGroup fx:id="radioButtonAlgorithmGroup" />
+					  </fx:define>
+                     <children>
+                        <RadioButton mnemonicParsing="false" selected="true" text="MD5">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="radioButtonAlgorithmGroup" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton mnemonicParsing="false" text="SHA-256" toggleGroup="$radioButtonAlgorithmGroup" />
+                        <RadioButton mnemonicParsing="false" text="CRC32" toggleGroup="$radioButtonAlgorithmGroup" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding></VBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane animated="false" collapsible="false" disable="true" layoutX="499.0" layoutY="86.0" prefHeight="143.0" prefWidth="266.0" text="Block size of the read buffer" visible="false">
+         <content>
+            <AnchorPane prefHeight="101.0" prefWidth="267.0">
+               <children>
+                  <Label layoutX="38.0" layoutY="14.0" text="Start:" />
+                  <Label layoutX="11.0" layoutY="51.0" text="Maximum:" />
+                  <Spinner fx:id="spinnerBufferStart" editable="true" layoutX="76.0" layoutY="10.0" prefHeight="25.0" prefWidth="130.0" />
+                  <Spinner fx:id="spinnerBufferMax" editable="true" layoutX="77.0" layoutY="47.0" prefHeight="25.0" prefWidth="130.0" />
+                  <Label layoutX="214.0" layoutY="14.0" text="BYTES" />
+                  <Label layoutX="214.0" layoutY="51.0" text="BYTES" />
+                  <Label layoutX="11.0" layoutY="78.0" text="*Create checksum from a certain size" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <TitledPane collapsible="false" layoutX="500.0" layoutY="87.0" prefHeight="143.0" prefWidth="268.0" snapToPixel="false" text="Similarity">
+         <content>
+            <AnchorPane prefHeight="121.0" prefWidth="266.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Similarity: " />
+                  <Spinner fx:id="spinnerSimilarity" editable="true" layoutX="69.0" layoutY="10.0" prefHeight="25.0" prefWidth="94.0" />
+                  <Label layoutX="67.0" layoutY="40.0" text="\% equals or above" />
+                  <CheckBox fx:id="chkShowSimilarity" layoutX="14.0" layoutY="65.0" mnemonicParsing="false" text="Show similarity" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+   </children>
+</AnchorPane>

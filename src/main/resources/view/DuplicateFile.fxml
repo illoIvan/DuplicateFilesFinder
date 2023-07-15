@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+
+<?import javafx.scene.control.Button?>
+<?import com.illoivan.duplicatefiles.model.CustomTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPaneMain" prefHeight="793.0" prefWidth="1214.0" stylesheets="@../css/duplicateFileView.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.illoivan.duplicatefiles.controller.view.DuplicateFileViewController">
+   <children>
+      <Button fx:id="btnDelete" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnDelete" prefHeight="41.0" prefWidth="126.0" text="Delete selection" />
+      <CustomTableView fx:id="tableView" layoutY="80.0" prefHeight="713.0" prefWidth="1214.0" />
+   </children>
+</AnchorPane>
