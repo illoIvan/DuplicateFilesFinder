@@ -32,23 +32,43 @@ public class PredicateMP3Metadata {
         return predicate;
     }
     
-    private static Predicate<CustomFile> genre(MP3Metadata metadata){
-        return cf -> ((MP3Metadata)cf.getMetadata()).getGenre().equals(metadata.getGenre());
+    private static Predicate<CustomFile> genre(MP3Metadata metadata) {
+        return cf -> {
+            MP3Metadata cfMetadata = (MP3Metadata) cf.getMetadata();
+            return cfMetadata != null && cfMetadata.getGenre() != null &&
+                    cfMetadata.getGenre().equals(metadata.getGenre());
+        };
     }
     
-    private static Predicate<CustomFile> album(MP3Metadata metadata){
-        return cf -> ((MP3Metadata)cf.getMetadata()).getAlbum().equals(metadata.getAlbum());
+    private static Predicate<CustomFile> album(MP3Metadata metadata) {
+        return cf -> {
+            MP3Metadata cfMetadata = (MP3Metadata) cf.getMetadata();
+            return cfMetadata != null && cfMetadata.getAlbum() != null &&
+                    cfMetadata.getAlbum().equals(metadata.getAlbum());
+        };
     }
-    
-    private static Predicate<CustomFile> artist(MP3Metadata metadata){
-        return cf -> ((MP3Metadata)cf.getMetadata()).getArtist().equals(metadata.getArtist());
+
+    private static Predicate<CustomFile> artist(MP3Metadata metadata) {
+        return cf -> {
+            MP3Metadata cfMetadata = (MP3Metadata) cf.getMetadata();
+            return cfMetadata != null && cfMetadata.getArtist() != null &&
+                    cfMetadata.getArtist().equals(metadata.getArtist());
+        };
     }
-    
-    private static Predicate<CustomFile> title(MP3Metadata metadata){
-        return cf -> ((MP3Metadata)cf.getMetadata()).getTitle().equals(metadata.getTitle());
+
+    private static Predicate<CustomFile> title(MP3Metadata metadata) {
+        return cf -> {
+            MP3Metadata cfMetadata = (MP3Metadata) cf.getMetadata();
+            return cfMetadata != null && cfMetadata.getTitle() != null &&
+                    cfMetadata.getTitle().equals(metadata.getTitle());
+        };
     }
-    
+
     private static Predicate<CustomFile> duration(MP3Metadata metadata){
-        return cf -> ((MP3Metadata)cf.getMetadata()).getDuration() == metadata.getDuration();
+        return cf -> {
+        	MP3Metadata cfMetadata = (MP3Metadata) cf.getMetadata();
+            return cfMetadata != null && cfMetadata.getDuration() == metadata.getDuration();
+        };
     }
+    
 }
