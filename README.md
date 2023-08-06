@@ -9,6 +9,9 @@ This app helps you find duplicate files based on content, weight, name and metad
 ## 🏭 Releases
 Check [here](https://github.com/illoIvan/DuplicateFilesFinder/releases) latest releases to download
 
+## Application interface
+![Image of the application interface](https://github.com/illoIvan/DuplicateFilesFinder/assets/40025251/b724b2d3-cbdf-43be-826d-120d7de04c01)
+
 ## Requirements to modify the project
 * Eclipse IDE for Enterprise Java and Web Developers
 * Lombok
